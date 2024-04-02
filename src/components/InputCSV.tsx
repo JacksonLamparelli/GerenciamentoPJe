@@ -2,7 +2,6 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { ChangeEvent } from "react";
 import { Processo } from "../tipos/processo";
-import { ItemSelecionado } from "../tipos/ItemSelecionado";
 
 interface Props {
   onAcervoLoaded: (processos: Processo[]) => void;
