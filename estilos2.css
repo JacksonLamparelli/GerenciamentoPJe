@@ -1,0 +1,282 @@
+
+table {
+table-layout: fixed;
+width: 100%
+
+}
+
+thead th:nth-child(1) {
+width: 30%;
+
+}
+
+thead th:nth-child(2) {
+width: 20%;
+
+}
+
+thead th:nth-child(3) {
+width: 15%;
+
+}
+
+thead th:nth-child(4) {
+width: 35%;
+
+}
+
+th,
+td {
+padding: 20px;
+}
+
+th {
+letter-spacing: 2px;
+}
+
+td {
+letter-spacing: 1px;
+}
+
+thead {
+color: white;
+text-shadow: 1px 1px 1px black;
+}
+
+tbody td {
+background: white;
+text-align: center;
+color: black;
+}
+
+tfoot th {
+text-align: right;
+}
+
+html 
+
+{
+
+    background-color: #333366;
+
+}
+
+h1 {
+
+color: rgb(241, 241, 235);
+text-align: center;
+text-shadow: 3px 3px 1px black;
+
+}
+
+main {
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+flex: 1;
+
+
+}
+
+
+
+div#inic{
+
+background: rgb(60, 05, 50);
+color: white;
+width: 400px;
+height:100px;
+font-family: "Open Sans";
+font-size: 20px;
+line-height: 100px;
+text-align: center;
+margin: 10px 10px 10px 10px;
+
+
+	}
+
+    div#proc{
+
+        background: rgb(60, 05, 50);
+        color: white;
+        width: 400px;
+        height:100px;
+        font-family: "Open Sans";
+        font-size: 20px;
+        line-height: 100px;
+        text-align: center;
+
+        
+            }
+            
+div#exp{
+
+background: rgb(60, 05, 50);
+color: white;
+width: 400px;
+height:100px;
+font-family: "Open Sans";
+font-size: 20px;
+line-height: 100px;
+text-align: center;
+
+                
+}            
+
+div#aud{
+
+    background: rgb(60, 05, 50);
+    color: white;
+    width: 400px;
+    height:100px;
+    font-family: "Open Sans";
+    font-size: 20px;
+    line-height: 100px;
+    text-align: center;
+
+                    
+    }            
+
+    div#Recursos{
+
+        background: rgb(60, 05, 50);
+        color: white;
+        font-family: "Open Sans";
+        font-size: 20px;
+        line-height: 100px;
+        text-align: center;
+        margin: 10px 10px;
+        width: 400px;
+        height:600px;
+                                
+        }            
+
+        div#Execução{
+
+            background: rgb(60, 05, 50);
+            color: white;
+            width: 400px;
+            height:100px;
+            font-family: "Open Sans";
+            font-size: 20px;
+            line-height: 100px;
+            text-align: center;
+            margin: 10px 10px;
+                                        
+            }            
+
+            div#outras{
+
+                background: rgb(60, 05, 50);
+                color: white;
+                width: 400px;
+                height:100px;
+                font-family: "Open Sans";
+                font-size: 20px;
+                line-height: 100px;
+                text-align: center;
+                margin: 10px 10px;
+                
+                                
+                }
+                
+                div#diag{
+
+                    background: rgb(60, 05, 50);
+                    color: white;
+                    width: 400px;
+                    height:100px;
+                    font-family: "Open Sans";
+                    font-size: 20px;
+                    line-height: 100px;
+                    text-align: center;
+                    margin-top: 20px;
+                                    
+                    } 
+
+                    div#submissao{
+
+                        background: rgb(60, 05, 50);
+                        color: white;
+                        width: 400px;
+                        height:100px;
+                        font-family: "Open Sans";
+                        font-size: 20px;
+                        line-height: 100px;
+                        text-align: center;
+                        margin-top: 20px;
+                                        
+                        }
+
+
+/* zebra striping*/
+
+tbody tr:nth-child(odd) {
+background-color: #ff33cc;
+}
+
+tdbody tr:nth-child(even) {
+background-color: #e495e4
+}
+
+tbody tr {
+
+background-image: url(noise.png);
+}
+
+table {
+background-color: #ff33cc;
+}
+
+
+body
+{
+    font-family: Arial;
+    font-size: 10pt;
+}
+table
+{
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+table th
+{
+    background-color: #F7F7F7;
+    color: #333;
+    font-weight: bold;
+}
+table th, table td
+{
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+/*impressão*/
+
+@media print {
+
+    body
+    {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+    table
+    {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+    table th
+    {
+        background-color: #F7F7F7;
+        color: #333;
+        font-weight: bold;
+    }
+    table th, table td
+    {
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+}
+

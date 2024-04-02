@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos.css" media="screen"/>
+    <link rel="stylesheet" href="estilos2.css" media="print"/>
+    <title>Execução</title>
+    </head>
+  <body>
+    <form>
+      <div>
+        <label for="csv">Inserir Arquivo</label>
+        <input type="file" name="diag" id="csv" accept=".csv" />
+      </div>
+    </form>
+
+    <main>
+      <section>
+        <div id="resultados_execucao">
+          <h1>Execução</h1>
+          </div>
+      </section>  
+<div id="div_tabela">
+      <table class="table table-bordered" id="tableClient">
+        <thead>
+          <tr>
+            <th scope="col">Processo</th>
+            <th scope="col">Assunto</th>
+            <th scope="col">Tarefa atual</th>
+            <th scope="col">Data</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+       
+    </main>
+    
+    <script>
+      
+      //LEITURA DO ARQUIVO CSV
+
+      function lerArquivoCSV(arquivo, callback) {
+        const leitor = new FileReader();
+
+        leitor.onload = function (evento) {
+          const conteudo = evento.target.result;
+          callback(conteudo);
+        };
+
+        leitor.readAsText(arquivo);
+      }
+
+      function converterCSVparaArray(conteudoCSV) {
+        const linhas = conteudoCSV.split("\n");
+        const arrayCSV = [];
+
+        linhas.forEach(function (linha) {
+          const valores = linha.split(";");
+          arrayCSV.push(valores);
+        });
+
+        return arrayCSV;
+      }
+
+      
+      const inputArquivo = document.getElementById("csv");
+
+      inputArquivo.addEventListener("change", function (evento) {
+        const arquivo = evento.target.files[0];
+
+        lerArquivoCSV(arquivo, function (conteudo) {
+          const arrayCSV = converterCSVparaArray(conteudo);          
+
+
+          //Função de impressão da tabela
+          function printDiv(divID) {
+        //Get the HTML of div
+        var divElements = document.getElementById('div_tabela').innerHTML;
+        //Get the HTML of whole page
+        var oldPage = document.body.innerHTML;
+        //Reset the page's HTML with div's HTML only
+        document.body.innerHTML = 
+          "<html><head><title></title></head><body>" + 
+          divElements + "</body>";
+        //Print Page
+        window.print();
+        //Restore orignal HTML
+        document.body.innerHTML = oldPage;
+
+    }
+
+    
+
+                      /*GERAÇÃO DA TABELA
+                      let corpoTabela = document.querySelector("#tableClient tbody");
+          corpoTabela.innerHTML = "";*/
+
+          //CONTAGEM
+          //PESQUISA ANALISAR MANIFESTAÇÃO PARCIAL
+          var Exe_man_par = arrayCSV.filter(FunçãoGabinete);
+          console.log("[JEF-EXEC] - Analisar Manifestação Parcial: " + Exe_man_par.length);
+          
+          function FunçãoGabinete(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Analisar manifestação parcial"');
+            return teste_gabinete;
+          }
+
+                    //P. ANÁLISE DE SECRETARIA                    
+                    var exe_an_sec = arrayCSV.filter(FunçãoGabinete2);
+          console.log("[JEF-EXEC] - Análise de Secretaria: " + exe_an_sec.length);
+
+          function FunçãoGabinete2(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Análise de secretaria"');
+            return teste_gabinete;
+          }
+
+                    //P. TRIAGEM INICIAL                    
+                    var exe_tri = arrayCSV.filter(FunçãoGabinete3);
+          console.log("[JEF-EXEC] - Triagem Inicial: " + exe_tri.length);
+
+          function FunçãoGabinete3(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Triagem Inicial"');
+            return teste_gabinete;
+          }
+
+                              //P. PROCESSO COM PRAZO EM CURSO                    
+                              var exe_proc_pra = arrayCSV.filter(FunçãoGabinete4);
+          console.log("[JEF-EXEC] - Processo com prazo em curso: " + exe_proc_pra.length);
+
+          function FunçãoGabinete4(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Processo com prazo em curso"');
+            return teste_gabinete;
+          }
+
+                              //P. MINUTAR ATO DECISÃO                    
+                              var exe_min_dec = arrayCSV.filter(FunçãoGabinete5);
+          console.log("[JEF-EXEC] - Minutar Decisão: " + exe_min_dec.length);
+
+          function FunçãoGabinete5(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Minutar Ato - Decisão"');
+            return teste_gabinete;
+          }
+
+                              //P. MINUTAR DESPACHO                    
+                              var exe_min_des = arrayCSV.filter(FunçãoGabinete6);
+          console.log("[JEF-EXEC] - Minutar Despacho: " + exe_min_des.length);
+
+          function FunçãoGabinete6(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Minutar Ato - Despacho"');
+            return teste_gabinete;
+          }
+
+                              //P. MINUTAR ATO ORDINATÓRIO                    
+                              var exe_min_ato = arrayCSV.filter(FunçãoGabinete7);
+          console.log("[JEF-EXEC] - Minutar Ato Ordinatório: " + exe_min_ato.length);
+
+          function FunçãoGabinete7(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Minutar ato ordinatório"');
+            return teste_gabinete;
+          }
+
+                              //P. MINUTAR SENTENÇA                    
+                              var exe_min_sen = arrayCSV.filter(FunçãoGabinete8);
+          console.log("[JEF-EXEC] - Minutar Sentença: " + exe_min_sen.length);
+
+          function FunçãoGabinete8(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Minutar Ato - Sentença"');
+            return teste_gabinete;
+          }
+
+                              //P. REVISAR DECISÃO                    
+                              var exe_rev_dec = arrayCSV.filter(FunçãoGabinete9);
+          console.log("[JEF-EXEC] - Revisar Decisão: " + exe_rev_dec.length);
+
+          function FunçãoGabinete9(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Revisar Minuta - Decisão"');
+            return teste_gabinete;
+          }
+
+                              //P. REVISAR DESPACHO                    
+                              var exe_rev_des = arrayCSV.filter(FunçãoGabinete10);
+          console.log("[JEF-EXEC] - Revisar Despacho: " + exe_rev_des.length);
+
+          function FunçãoGabinete10(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Revisar Minuta - Despacho"');
+            return teste_gabinete;
+          }
+
+                                        //PESQUISA: ASSINAR CERTIDÃO                    
+                                        var exe_ass_cer = arrayCSV.filter(FunçãoGabinete11);
+          console.log("[JEF-EXEC] - Assinar Certidão: " + exe_ass_cer.length);
+
+          function FunçãoGabinete11(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF-EXEC] Assinar certidão"');
+            return teste_gabinete;
+          }
+
+                                                  //P. PRÉ-ARQUIVAMENTO                    
+                                                  var pre_arq = arrayCSV.filter(FunçãoGabinete12);
+          console.log("[JEF] - Verificar pendências anteriores ao arquivamento: " + pre_arq.length);
+
+          function FunçãoGabinete12(objeto) {
+            let teste_gabinete = objeto.includes('"[JEF] Verificar pendências anteriores ao arquivamento"');
+            return teste_gabinete;
+          }
+              
+            document.getElementById('resultados_execucao').innerHTML =
+              "<h2><div id='button_exe_tri'>Triagem Inicial: " +
+              exe_tri.length +
+              " </div></li><br>" +
+              "<div id='button_exe_an_sec'>Análise de Secretaria: " +
+              exe_an_sec.length +
+              ".</div><br>" +
+              "<div id='b_exe_man_par'>Analisar Manifestação Parcial: " +
+              Exe_man_par.length +
+              ".</div><br>" +
+              "<h2><div  id='b_exe_min_dec'>Minutar Decisão: " +
+              exe_min_dec.length +
+              ". </div><br>" +
+              "Minutar Despacho: " +
+              exe_min_des.length +
+              ". <br>" +
+              "Minutar Sentença: " +
+              exe_min_sen.length +
+              ". <br>" +
+              "Minutar Ato Ordinatório: " +
+              exe_min_ato.length +
+              ". <br>" +
+              "Revisar Decisão: " +
+              exe_rev_dec.length +
+              ". <br>" +
+              "Revisar Despacho: " +
+              exe_rev_des.length +
+              ". <br>" +
+              "Assinar Certidão: " +
+              exe_ass_cer.length +
+              ". <br>" +
+              "Proecesso com Prazo em Curso: " +
+              exe_proc_pra.length +
+              ". <br>" +
+              "Verificar Pendências Anteriores ao Arquivamento: " +
+              pre_arq.length +
+              ". <br></ol></h2>";
+
+          //***Botão Triagem Inicial        
+          var c_exe_tri = document.getElementById("button_exe_tri");
+          c_exe_tri.addEventListener("click", clicar_exe_tri)
+          
+          function clicar_exe_tri (){
+             //GERAÇÃO DA TABELA EM BRANCO
+             let corpoTabela = document.querySelector("#tableClient tbody");
+             corpoTabela.innerHTML = "";
+             
+          exe_tri.forEach(function (linha) {
+            corpoTabela.innerHTML += `
+              <tr>
+                <td>${linha[0]}</td>
+                <td>${linha[8]}</td>
+                <td>${linha[18]}</td>
+                <td>${linha[16]}</td>
+              </tr>
+              `;
+              console.log("Execução da Linha Exe-Tri")
+          });
+            
+          }
+
+          //GERAÇÃO DA TABELA - ANÁLISE DE SECRETARIA
+          var c_exe_an_sec = document.getElementById("button_exe_an_sec");
+          c_exe_an_sec.addEventListener("click", clicar_exe_an_sec)
+          
+          function clicar_exe_an_sec (){
+             //GERAÇÃO DA TABELA EM BRANCO
+             let corpoTabela = document.querySelector("#tableClient tbody");
+             corpoTabela.innerHTML = "";
+             
+          exe_an_sec.forEach(function (linha) {
+            corpoTabela.innerHTML += `
+              <tr>
+                <td>${linha[0]}</td>
+                <td>${linha[8]}</td>
+                <td>${linha[18]}</td>
+                <td>${linha[16]}</td>
+              </tr>
+              `;
+              console.log("execução de linha exe_an_sec")
+          });
+          }
+
+          //GERAÇÃO DA TABELA - ANALISAR MANIFESTAÇÃO PARCIAL
+          const c_exe_man_par = document.getElementById("b_exe_man_par");
+          c_exe_man_par.addEventListener("click", clicar_exe_man_par)
+          
+          function clicar_exe_man_par (){
+             //GERAÇÃO DA TABELA EM BRANCO
+             let corpoTabela = document.querySelector("#tableClient tbody");
+             corpoTabela.innerHTML = "";
+             
+          Exe_man_par.forEach(function (linha) {
+            corpoTabela.innerHTML += `
+              <tr> 
+                <td>${linha[0]}</td>
+                <td>${linha[8]}</td>
+                <td>${linha[18]}</td>
+                <td>${linha[16]}</td>
+              </tr>
+              `;
+
+          });
+          }
+       
+
+Exe_man_par.forEach(function (item) {
+console.log(item[16] + "Data do Último Movimento")
+console.log(item[19] + "Data da Entrada na Tarefa")
+})
+
+
+
+
+        });       
+      });
+
+      
+
+
+
+    </script>
+  </body>
+</html>
