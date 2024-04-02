@@ -71,6 +71,7 @@ export function InputFileUpload(props: Props) {
             (processo) =>
               processo.tarefa_atual === "[JEF-INICIAL] Triagem Inicial" ||
               processo.tarefa_atual === "[JEF-INICIAL] Análise de secretaria" ||
+<<<<<<< HEAD
               processo.tarefa_atual === "[JEF-INICIAL] Analisar manifestação parcial" ||
               processo.tarefa_atual === "[JEF-INICIAL] Minutar Ato - Decisão" ||
               processo.tarefa_atual === "[JEF-INICIAL] Minutar Ato - Despacho" ||
@@ -85,6 +86,22 @@ export function InputFileUpload(props: Props) {
               processo.tarefa_atual === "[JEF-INICIAL] Revisar Minuta - Despacho" ||
               processo.tarefa_atual === "[JEF-INICIAL] Revisar Minuta - Decisão" ||
               processo.tarefa_atual === "[JEF-INICIAL] Revisar Minuta - Sentença"
+=======
+              "[JEF-INICIAL] Analisar manifestação parcial" ||
+              "[JEF-INICIAL] Minutar Ato - Decisão" ||
+              "[JEF-INICIAL] Minutar Ato - Despacho" ||
+              "[JEF-INICIAL] Minutar Ato - Sentença" ||
+              "[JEF-INICIAL] Minutar ato ordinatório" ||
+              "[JEF-INICIAL] Processos sem contestação padrão - Triagem" ||
+              "[JEF-INICIAL] Processo com prazo em curso" ||
+              "[JEF-INICIAL] Cumprir determinações" ||
+              "[JEF-INICIAL] Avaliar determinações" ||
+              "[JEF-INICIAL] Avaliar determinações - Sentença" ||
+              "[JEF-INICIAL] Assinar ato ordinatório" ||
+              "[JEF-INICIAL] Revisar Minuta - Despacho" ||
+              "[JEF-INICIAL] Revisar Minuta - Decisão" ||
+              "[JEF-INICIAL] Revisar Minuta - Sentença"
+>>>>>>> main
           )
         );
       });
