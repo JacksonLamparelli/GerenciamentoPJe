@@ -619,7 +619,7 @@ export function ListGroup(props: Props) {
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">RPV e Precatórios</h5>
             <span className="badge text-bg-primary rounded-pill">
-              {totalRPVeProcatorios.length}
+              {props.onRPVePrecatorios.length}
             </span>
             <small>3 days ago</small>
           </div>
