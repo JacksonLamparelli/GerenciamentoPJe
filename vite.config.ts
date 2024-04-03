@@ -5,12 +5,4 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/GerenciamentoPJe/',
-  build: {
-    // Outras configurações de construção...
-    rollupOptions: {
-      input: {
-        main: 'src/main.tsx', // Ponto de entrada JavaScript do seu aplicativo
-      },
-    },
-  }
-})
+  })
