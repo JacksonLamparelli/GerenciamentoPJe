@@ -97,6 +97,193 @@ export function InputFileUpload(props: Props) {
                 "[JEF-INICIAL] Revisar Minuta - Sentença"
           )
         );
+
+        props.onProcessamento(
+          processos.filter(
+            (processo) =>
+              processo.tarefa_atual === "[JEF-PROC] Triagem Inicial" ||
+              processo.tarefa_atual === "[JEF-PROC] Análise de secretaria" ||
+              processo.tarefa_atual ===
+                "[JEF-PROC] Analisar manifestação parcial" ||
+              processo.tarefa_atual === "[JEF-PROC] Minutar Ato - Decisão" ||
+              processo.tarefa_atual === "[JEF-PROC] Minutar Ato - Despacho" ||
+              processo.tarefa_atual === "[JEF-PROC] Minutar Ato - Sentença" ||
+              processo.tarefa_atual === "[JEF-PROC] Minutar ato ordinatório" ||
+              processo.tarefa_atual ===
+                "[JEF-PROC] Processo com prazo em curso" ||
+              processo.tarefa_atual ===
+                "[JEF-PROC] Análise de secretaria - Remetidos ao INSS" ||
+              processo.tarefa_atual === "[JEF-PROC] Cumprir determinações" ||
+              processo.tarefa_atual === "[JEF-PROC] Avaliar determinações" ||
+              processo.tarefa_atual ===
+                "[JEF-PROC] Avaliar determinações - Sentença" ||
+              processo.tarefa_atual === "[JEF-PROC] Assinar ato ordinatório" ||
+              processo.tarefa_atual ===
+                "[JEF-PROC] Revisar Minuta - Despacho" ||
+              processo.tarefa_atual === "[JEF-PROC] Revisar Minuta - Decisão" ||
+              processo.tarefa_atual === "[JEF-PROC] Revisar Minuta - Sentença"
+          )
+        );
+
+        props.onExpedicao(
+          processos.filter(
+            (processo) =>
+              processo.tarefa_atual === "[JEF-EXP] Análise de secretaria" ||
+              processo.tarefa_atual ===
+                "[JEF-EXP] Analisar manifestação parcial" ||
+              processo.tarefa_atual ===
+                "[JEF-PROC] Analisar manifestação parcial" ||
+              processo.tarefa_atual ===
+                "[JEF-EXP] Aguardando devolução do mandado" ||
+              processo.tarefa_atual ===
+                "[JEF-EXP] Avaliar expedientes assinados" ||
+              processo.tarefa_atual === "[JEF-EXP] Assinar Ofício - Diretor" ||
+              processo.tarefa_atual === "[JEF-EXP] Cumprir determinações" ||
+              processo.tarefa_atual === "[JEF-EXP] Minutar Carta Precatória" ||
+              processo.tarefa_atual === "[JEF-EXP] Processo com prazo em curso"
+          )
+        );
+
+        props.onRecursos(
+          processos.filter(
+            (processo) =>
+              processo.tarefa_atual === "[JEF-REC] Triagem Inicial" ||
+              processo.tarefa_atual === "[JEF-REC] Análise de secretaria" ||
+              processo.tarefa_atual ===
+                "[JEF-REC] Analisar manifestação parcial" ||
+              processo.tarefa_atual ===
+                "[JEF-REC] Análise de secretaria - Remetidos ao INSS" ||
+              processo.tarefa_atual === "[JEF-REC] Minutar Ato - Decisão" ||
+              processo.tarefa_atual === "[JEF-REC] Minutar Ato - Despacho" ||
+              processo.tarefa_atual === "[JEF-REC] Minutar Ato - Sentença" ||
+              processo.tarefa_atual === "[JEF-REC] Minutar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-REC] Assinar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-REC] Cumprir determinações" ||
+              processo.tarefa_atual === "[JEF-REC] Avaliar determinações" ||
+              processo.tarefa_atual ===
+                "[JEF-REC] Avaliar determinações - Sentença" ||
+              processo.tarefa_atual ===
+                "[JEF-REC] Recebido da instância superior" ||
+              processo.tarefa_atual ===
+                "[JEF-REC] Remeter à Instância Superior" ||
+              processo.tarefa_atual === "[JEF-REC] Processo com prazo em curso"
+          )
+        );
+
+        props.onExecucao(
+          processos.filter(
+            (processo) =>
+              processo.tarefa_atual === "[JEF-EXEC] Triagem Inicial" ||
+              processo.tarefa_atual === "[JEF-EXEC] Análise de secretaria" ||
+              processo.tarefa_atual ===
+                "[JEF-EXEC] Analisar manifestação parcial" ||
+              processo.tarefa_atual ===
+                "[JEF-PROC] Análise de secretaria - Remetidos ao INSS" ||
+              processo.tarefa_atual === "[JEF-EXEC] Minutar Ato - Decisão" ||
+              processo.tarefa_atual === "[JEF-EXEC] Minutar Ato - Despacho" ||
+              processo.tarefa_atual === "[JEF-EXEC] Minutar Ato - Sentença" ||
+              processo.tarefa_atual === "[JEF-EXEC] Minutar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-EXEC] Assinar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-EXEC] Avaliar determinações" ||
+              processo.tarefa_atual ===
+                "[JEF-EXEC] Avaliar determinações - Sentença" ||
+              processo.tarefa_atual === "[JEF-EXEC] Cumprir determinações" ||
+              processo.tarefa_atual ===
+                "[JEF-EXEC] Preparar certidão de trânsito em julgado" ||
+              processo.tarefa_atual === "[JEF-EXEC] Recebidos da Contadoria" ||
+              processo.tarefa_atual === "[JEF-EXEC] Remetidos à Contadoria" ||
+              processo.tarefa_atual ===
+                "[JEF-EXEC] Recebidos do INSS - DECISÃO CUMPRIDA" ||
+              processo.tarefa_atual ===
+                "[JEF-EXEC] Recebidos do INSS - SEM CUMPRIMENTO DE DECISÃO" ||
+              processo.tarefa_atual ===
+                "[JEF-EXEC] Remetidos para o INSS para cumprimento de decisão" ||
+              processo.tarefa_atual === "[JEF-EXEC] Processo com prazo em curso"
+          )
+        );
+
+        props.onPericias(
+          processos.filter(
+            (processo) =>
+              processo.tarefa_atual === "[JEF-PER] Triagem Inicial" ||
+              processo.tarefa_atual === "[JEF-PER] Análise de secretaria" ||
+              processo.tarefa_atual === "[JEF-PER] Administrar Perícia" ||
+              processo.tarefa_atual ===
+                "[JEF-PER] Analisar manifestação parcial" ||
+              processo.tarefa_atual === "[JEF-PER] Minutar Ato - Decisão" ||
+              processo.tarefa_atual === "[JEF-PER] Minutar Ato - Despacho" ||
+              processo.tarefa_atual === "[JEF-PER] Minutar Ato - Sentença" ||
+              processo.tarefa_atual === "[JEF-PER] Minutar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-PER] Assinar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-PER] Avaliar determinações" ||
+              processo.tarefa_atual ===
+                "[JEF-PER] Avaliar determinações - Sentença" ||
+              processo.tarefa_atual === "[JEF-PER] Cumprir determinações" ||
+              processo.tarefa_atual === "[JEF-PER] Revisar Minuta - Decisão" ||
+              processo.tarefa_atual === "[JEF-PER] Revisar Minuta - Despacho" ||
+              processo.tarefa_atual === "[JEF-PER] Revisar Minuta - Sentença" ||
+              processo.tarefa_atual === "[JEF-PER] Processo com prazo em curso"
+          )
+        );
+
+        props.onIncapacidade(
+          processos.filter(
+            (processo) =>
+              processo.tarefa_atual === "[JEF-INC] Análise de secretaria" ||
+              processo.tarefa_atual ===
+                "[JEF-INC] Analisar Manifestação Parcial" ||
+              processo.tarefa_atual ===
+                "[JEF-INC] Analisar manifestação sobre laudo pericial" ||
+              processo.tarefa_atual === "[JEF-INC] Minutar Ato - Despacho" ||
+              processo.tarefa_atual === "[JEF-INC] Minutar Ato - Decisão" ||
+              processo.tarefa_atual === "[JEF-INC] Minutar Ato - Sentença" ||
+              processo.tarefa_atual === "[JEF-INC] Minutar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-INC] Assinar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-INC] Avaliar determinações" ||
+              processo.tarefa_atual ===
+                "[JEF-INC] Avaliar determinações - Sentença" ||
+              processo.tarefa_atual ===
+                "[JEF-INC] Processo com prazo em curso - Intimação sobre laudo pericial" ||
+              processo.tarefa_atual ===
+                "[JEF-INC] Processo com prazo em curso" ||
+              processo.tarefa_atual === "[JEF-INC] Revisar Minuta - Despacho" ||
+              processo.tarefa_atual === "[JEF-INC] Revisar Minuta - Decisão" ||
+              processo.tarefa_atual === "[JEF-INC] Revisar Minuta - Sentença"
+          )
+        );
+
+        props.onRPVePrecatorios(
+          processos.filter(
+            (processo) =>
+              processo.tarefa_atual === "[JEF-REQ] Triagem Inicial" ||
+              processo.tarefa_atual === "[JEF-REQ] Análise de secretaria" ||
+              processo.tarefa_atual ===
+                "[JEF-REQ] Analisar manifestação parcial" ||
+              processo.tarefa_atual ===
+                "[JEF-REQ] Análise de secretaria - Remetidos ao INSS" ||
+              processo.tarefa_atual === "[JEF-REQ] Minutar Ato - Despacho" ||
+              processo.tarefa_atual === "[JEF-REQ] Minutar Ato - Decisão" ||
+              processo.tarefa_atual === "[JEF-REQ] Minutar Ato - Sentença" ||
+              processo.tarefa_atual === "[JEF-REQ] Minutar certidão" ||
+              processo.tarefa_atual === "[JEF-REQ] Minutar ato ordinatório" ||
+              processo.tarefa_atual ===
+                "[JEF-REQ] Expedir ofício requisitório" ||
+              processo.tarefa_atual ===
+                "[JEF-REQ] Revisar ofício requisitório" ||
+              processo.tarefa_atual === "[JEF-REQ] Assinar ato ordinatório" ||
+              processo.tarefa_atual === "[JEF-REQ] Assinar certidão" ||
+              processo.tarefa_atual === "[JEF-REQ] Avaliar determinações" ||
+              processo.tarefa_atual ===
+                "[JEF-REQ] Avaliar determinações - Sentença" ||
+              processo.tarefa_atual ===
+                "[JEF-REQ] Processo com prazo em curso" ||
+              processo.tarefa_atual ===
+                "[JEF-REQ] Processo com prazo em curso" ||
+              processo.tarefa_atual === "[JEF-REQ] Revisar Minuta - Despacho" ||
+              processo.tarefa_atual === "[JEF-REQ] Revisar Minuta - Decisão" ||
+              processo.tarefa_atual === "[JEF-REQ] Revisar Minuta - Sentença"
+          )
+        );
       });
     }
   }
