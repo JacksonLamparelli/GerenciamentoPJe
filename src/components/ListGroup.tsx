@@ -5,18 +5,31 @@ interface Props {
   onItemSelected: (filtro: ItemSelecionado) => void;
   acervo: Processo[];
   onGabinete: Processo[];
+  onGabMin: string | undefined;
   onAudiencias: Processo[];
+  onAudMin: string | undefined;
   onIniciais: Processo[];
+  onInicMin: string | undefined;
   onProcessamento: Processo[];
+  onProcMin: string | undefined;
   onExpedicao: Processo[];
+  onExpMin: string | undefined;
   onRecursos: Processo[];
+  onRecMin: string | undefined;
   onExecucao: Processo[];
+  onExecMin: string | undefined;
   onPericias: Processo[];
+  onPerMin: string | undefined;
   onIncapacidade: Processo[];
+  onIncMin: string | undefined;
   onRPVePrecatorios: Processo[];
+  onRPVMin: string | undefined;
   onTarefasResiduais: Processo[];
+  onResidMin: string | undefined;
   onSobrestados: Processo[];
+  onSobrestadosMin: string | undefined;
   onEmInstanciaSuperior: Processo[];
+  onTurmasMin: string | undefined;
 }
 
 export function ListGroup(props: Props) {
@@ -436,62 +449,9 @@ export function ListGroup(props: Props) {
     totalDeTarefas: 2,
   };
 
-  //Contagem dos totais
-  const totalDeProcessos = props.acervo;
-
-  //Totais Gabinete
-  const totalGabinete = totalDeProcessos;
-  console.log(totalGabinete);
-
-  //Totais e RPV e Precatórios
-  const totalRPVeProcatorios = totalDeProcessos.filter(
-    (processo) =>
-      processo.tarefa_atual ===
-        parametrosRPVePrecatorios.stringsParaFiltragem[0] ||
-      processo.tarefa_atual ===
-        parametrosRPVePrecatorios.stringsParaFiltragem[1]
-  );
-
-  //Totais em Tarefas Residuais
-  const totalTarefasResiduais = totalDeProcessos.filter(
-    (processo) =>
-      processo.tarefa_atual ===
-        parametrosTarefasResiduais.stringsParaFiltragem[0] ||
-      processo.tarefa_atual ===
-        parametrosTarefasResiduais.stringsParaFiltragem[1] ||
-      processo.tarefa_atual ===
-        parametrosTarefasResiduais.stringsParaFiltragem[2] ||
-      processo.tarefa_atual ===
-        parametrosTarefasResiduais.stringsParaFiltragem[3] ||
-      processo.tarefa_atual ===
-        parametrosTarefasResiduais.stringsParaFiltragem[4] ||
-      processo.tarefa_atual ===
-        parametrosTarefasResiduais.stringsParaFiltragem[5] ||
-      processo.tarefa_atual ===
-        parametrosTarefasResiduais.stringsParaFiltragem[6]
-  );
-
-  //Totais em Sobrestados
-  const totalSobrestados = totalDeProcessos.filter(
-    (processo) =>
-      processo.tarefa_atual === parametrosSobrestados.stringsParaFiltragem[0] ||
-      processo.tarefa_atual === parametrosSobrestados.stringsParaFiltragem[1] ||
-      processo.tarefa_atual === parametrosSobrestados.stringsParaFiltragem[2] ||
-      processo.tarefa_atual === parametrosSobrestados.stringsParaFiltragem[3]
-  );
-
-  //Totais Em Instância Superior
-  const totalEmInstanciaSuperior = totalDeProcessos.filter(
-    (processo) =>
-      processo.tarefa_atual ===
-        parametrosEmInstanciaSuperior.stringsParaFiltragem[0] ||
-      processo.tarefa_atual ===
-        parametrosEmInstanciaSuperior.stringsParaFiltragem[1]
-  );
-
   return (
     <>
-      <h1>Setores</h1>
+      <h1>Fluxos do PJe</h1>
 
       <div className="list-group">
         <a
@@ -504,7 +464,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onGabinete.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onGabMin}</small>
           </div>
         </a>
         <a
@@ -517,7 +477,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onAudiencias.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onAudMin}</small>
           </div>
         </a>
         <a
@@ -530,7 +490,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onIniciais.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onInicMin}</small>
           </div>
         </a>
         <a
@@ -543,7 +503,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onProcessamento.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onProcMin}</small>
           </div>
         </a>
         <a
@@ -556,7 +516,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onExpedicao.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onExpMin}</small>
           </div>
         </a>
         <a
@@ -569,7 +529,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onRecursos.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onRecMin}</small>
           </div>
         </a>
         <a
@@ -582,7 +542,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onExecucao.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onExecMin}</small>
           </div>
         </a>
         <a
@@ -595,7 +555,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onPericias.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onPerMin}</small>
           </div>
         </a>
         <a
@@ -608,7 +568,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onIncapacidade.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onIncMin}</small>
           </div>
         </a>
         <a
@@ -621,7 +581,7 @@ export function ListGroup(props: Props) {
             <span className="badge text-bg-primary rounded-pill">
               {props.onRPVePrecatorios.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onRPVMin}</small>
           </div>
         </a>
         <a
@@ -632,9 +592,9 @@ export function ListGroup(props: Props) {
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Tarefas Residuais</h5>
             <span className="badge text-bg-primary rounded-pill">
-              {totalTarefasResiduais.length}
+              {props.onTarefasResiduais.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onResidMin}</small>
           </div>
         </a>
         <a
@@ -645,9 +605,9 @@ export function ListGroup(props: Props) {
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Sobrestados</h5>
             <span className="badge text-bg-primary rounded-pill">
-              {totalSobrestados.length}
+              {props.onSobrestados.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onSobrestadosMin}</small>
           </div>
         </a>
         <a
@@ -658,9 +618,9 @@ export function ListGroup(props: Props) {
           <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">Em Instância Superior</h5>
             <span className="badge text-bg-primary rounded-pill">
-              {totalEmInstanciaSuperior.length}
+              {props.onEmInstanciaSuperior.length}
             </span>
-            <small>3 days ago</small>
+            <small>{props.onTurmasMin}</small>
           </div>
         </a>
       </div>
