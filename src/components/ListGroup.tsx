@@ -451,9 +451,9 @@ export function ListGroup(props: Props) {
 
   return (
     <>
-      <h1>Fluxos do PJe</h1>
+      <h1 style={{ textAlign: "center" }}>Gerenciamento de Processos</h1>
 
-      <div className="list-group">
+      <div className="list-group" style={{ display: "flex" }}>
         <a
           href="#"
           className="list-group-item list-group-item-action"

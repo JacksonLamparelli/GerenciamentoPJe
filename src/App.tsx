@@ -6,6 +6,7 @@ import ListGroup from "./components/ListGroup";
 import { ItemSelecionado } from "./tipos/ItemSelecionado";
 import { Button } from "@mui/material";
 import UndoIcon from "@mui/icons-material/Undo";
+import "./styles.css";
 
 function App() {
   const [acervo, setAcervo] = useState<Processo[]>([]);
@@ -210,8 +211,17 @@ function App() {
 
   if (tarefaSelecionada === undefined) {
     return (
-      <>
-        <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: "#0078aa",
+          color: "white",
+        }}
+      >
+        <img src="pje2-branco (1).png"></img>
+        <div style={{ maxWidth: "60%" }}>
           <ListGroup
             acervo={acervo}
             onItemSelected={onItemSelected}
@@ -243,38 +253,37 @@ function App() {
             onTurmasMin={turmasMin}
           />
         </div>
-        <div>
-          <InputFileUpload
-            onAcervoLoaded={onAcervoLoaded}
-            onGabinete={onGabineteLoaded}
-            onGabineteMinimo={onGabMinLoaded}
-            onAudiencias={onAudienciasLoaded}
-            onAudienciasMinimo={onAudMinLoaded}
-            onIniciais={onIniciaisLoaded}
-            onIniciaisMinimo={onInicMinLoaded}
-            onProcessamento={onProcessamentoLoaded}
-            onProcessamentoMinimo={onProcMinLoaded}
-            onExpedicao={onExpedicaoLoaded}
-            onExpedicaoMinimo={onExpMinLoaded}
-            onRecursos={onRecursosLoaded}
-            onRecursosMinimo={onRecMinLoaded}
-            onExecucao={onExecucaoLoaded}
-            onExecucaoMinimo={onExecMinLoaded}
-            onPericias={onPericiasLoaded}
-            onPericiasMinimo={onPerMinLoaded}
-            onIncapacidade={onIncapacidadeLoaded}
-            onIncapacidadeMinimo={onIncMinLoaded}
-            onRPVePrecatorios={onRPVePrecatoriosLoaded}
-            onRPVMinimo={onRPVMinLoaded}
-            onTarefasResiduais={onTarefasResiduaisLoaded}
-            onResiduaisMinimo={onResidMinLoaded}
-            onSobrestados={onSobrestadosLoaded}
-            onSobrestadosMinimo={onSobrestadosMinLoaded}
-            onEmInstanciaSuperior={onEmInstanciaSuperiorLoaded}
-            onTurmasMinimo={onTurmasMinLoaded}
-          />
-        </div>
-      </>
+
+        <InputFileUpload
+          onAcervoLoaded={onAcervoLoaded}
+          onGabinete={onGabineteLoaded}
+          onGabineteMinimo={onGabMinLoaded}
+          onAudiencias={onAudienciasLoaded}
+          onAudienciasMinimo={onAudMinLoaded}
+          onIniciais={onIniciaisLoaded}
+          onIniciaisMinimo={onInicMinLoaded}
+          onProcessamento={onProcessamentoLoaded}
+          onProcessamentoMinimo={onProcMinLoaded}
+          onExpedicao={onExpedicaoLoaded}
+          onExpedicaoMinimo={onExpMinLoaded}
+          onRecursos={onRecursosLoaded}
+          onRecursosMinimo={onRecMinLoaded}
+          onExecucao={onExecucaoLoaded}
+          onExecucaoMinimo={onExecMinLoaded}
+          onPericias={onPericiasLoaded}
+          onPericiasMinimo={onPerMinLoaded}
+          onIncapacidade={onIncapacidadeLoaded}
+          onIncapacidadeMinimo={onIncMinLoaded}
+          onRPVePrecatorios={onRPVePrecatoriosLoaded}
+          onRPVMinimo={onRPVMinLoaded}
+          onTarefasResiduais={onTarefasResiduaisLoaded}
+          onResiduaisMinimo={onResidMinLoaded}
+          onSobrestados={onSobrestadosLoaded}
+          onSobrestadosMinimo={onSobrestadosMinLoaded}
+          onEmInstanciaSuperior={onEmInstanciaSuperiorLoaded}
+          onTurmasMinimo={onTurmasMinLoaded}
+        />
+      </div>
     );
   }
 
