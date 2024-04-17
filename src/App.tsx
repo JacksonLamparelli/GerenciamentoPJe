@@ -220,7 +220,7 @@ function App() {
           color: "white",
         }}
       >
-        <img src="pje2-branco (1).png"></img>
+        <img src="pje2-branco (1).png" style={{ margin: "20px" }}></img>
         <div style={{ maxWidth: "60%" }}>
           <ListGroup
             acervo={acervo}
