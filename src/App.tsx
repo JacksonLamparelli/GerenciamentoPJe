@@ -220,7 +220,7 @@ function App() {
           color: "white",
         }}
       >
-        <img src="pje2-branco (1).png" style={{ margin: "20px" }}></img>
+        <img src="pje2-branco (1).png" style={{ margin: "08px" }}></img>
         <div style={{ maxWidth: "60%" }}>
           <ListGroup
             acervo={acervo}
@@ -253,36 +253,37 @@ function App() {
             onTurmasMin={turmasMin}
           />
         </div>
-
-        <InputFileUpload
-          onAcervoLoaded={onAcervoLoaded}
-          onGabinete={onGabineteLoaded}
-          onGabineteMinimo={onGabMinLoaded}
-          onAudiencias={onAudienciasLoaded}
-          onAudienciasMinimo={onAudMinLoaded}
-          onIniciais={onIniciaisLoaded}
-          onIniciaisMinimo={onInicMinLoaded}
-          onProcessamento={onProcessamentoLoaded}
-          onProcessamentoMinimo={onProcMinLoaded}
-          onExpedicao={onExpedicaoLoaded}
-          onExpedicaoMinimo={onExpMinLoaded}
-          onRecursos={onRecursosLoaded}
-          onRecursosMinimo={onRecMinLoaded}
-          onExecucao={onExecucaoLoaded}
-          onExecucaoMinimo={onExecMinLoaded}
-          onPericias={onPericiasLoaded}
-          onPericiasMinimo={onPerMinLoaded}
-          onIncapacidade={onIncapacidadeLoaded}
-          onIncapacidadeMinimo={onIncMinLoaded}
-          onRPVePrecatorios={onRPVePrecatoriosLoaded}
-          onRPVMinimo={onRPVMinLoaded}
-          onTarefasResiduais={onTarefasResiduaisLoaded}
-          onResiduaisMinimo={onResidMinLoaded}
-          onSobrestados={onSobrestadosLoaded}
-          onSobrestadosMinimo={onSobrestadosMinLoaded}
-          onEmInstanciaSuperior={onEmInstanciaSuperiorLoaded}
-          onTurmasMinimo={onTurmasMinLoaded}
-        />
+        <div style={{ margin: "05px" }}>
+          <InputFileUpload
+            onAcervoLoaded={onAcervoLoaded}
+            onGabinete={onGabineteLoaded}
+            onGabineteMinimo={onGabMinLoaded}
+            onAudiencias={onAudienciasLoaded}
+            onAudienciasMinimo={onAudMinLoaded}
+            onIniciais={onIniciaisLoaded}
+            onIniciaisMinimo={onInicMinLoaded}
+            onProcessamento={onProcessamentoLoaded}
+            onProcessamentoMinimo={onProcMinLoaded}
+            onExpedicao={onExpedicaoLoaded}
+            onExpedicaoMinimo={onExpMinLoaded}
+            onRecursos={onRecursosLoaded}
+            onRecursosMinimo={onRecMinLoaded}
+            onExecucao={onExecucaoLoaded}
+            onExecucaoMinimo={onExecMinLoaded}
+            onPericias={onPericiasLoaded}
+            onPericiasMinimo={onPerMinLoaded}
+            onIncapacidade={onIncapacidadeLoaded}
+            onIncapacidadeMinimo={onIncMinLoaded}
+            onRPVePrecatorios={onRPVePrecatoriosLoaded}
+            onRPVMinimo={onRPVMinLoaded}
+            onTarefasResiduais={onTarefasResiduaisLoaded}
+            onResiduaisMinimo={onResidMinLoaded}
+            onSobrestados={onSobrestadosLoaded}
+            onSobrestadosMinimo={onSobrestadosMinLoaded}
+            onEmInstanciaSuperior={onEmInstanciaSuperiorLoaded}
+            onTurmasMinimo={onTurmasMinLoaded}
+          />
+        </div>
       </div>
     );
   }
