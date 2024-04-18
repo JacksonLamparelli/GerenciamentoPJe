@@ -455,15 +455,6 @@ export function ListGroup(props: Props) {
         className="list-group"
         style={{ display: "flex", flexDirection: "column" }}
       >
-        <img
-          src="/public/pje2-branco.png"
-          style={{
-            height: "80px",
-            width: "25%",
-            margin: "05px",
-            alignSelf: "center",
-          }}
-        ></img>
         <h1 style={{ textAlign: "center" }}>Gerenciamento de Processos</h1>
         <div
           style={{ display: "flex", height: "25px", justifyContent: "left" }}
