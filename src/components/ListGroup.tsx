@@ -456,7 +456,7 @@ export function ListGroup(props: Props) {
         style={{ display: "flex", flexDirection: "column" }}
       >
         <img
-          src="public/pje2-branco.png"
+          src="/public/pje2-branco.png"
           style={{
             height: "80px",
             width: "25%",
