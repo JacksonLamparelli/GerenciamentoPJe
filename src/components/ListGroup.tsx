@@ -469,7 +469,7 @@ export function ListGroup(props: Props) {
           style={{ display: "flex", height: "25px", justifyContent: "left" }}
         >
           <p style={{ marginLeft: "60px" }}>Fluxo</p>
-          <p style={{ marginLeft: "100px" }}>Total de Processos</p>
+          <p style={{ marginLeft: "101px" }}>Total de Processos</p>
           <p style={{ marginLeft: "auto" }}>Data Mais Antiga</p>
         </div>
         <a
