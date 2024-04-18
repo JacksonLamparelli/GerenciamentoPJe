@@ -451,9 +451,27 @@ export function ListGroup(props: Props) {
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>Gerenciamento de Processos</h1>
-
-      <div className="list-group" style={{ display: "flex" }}>
+      <div
+        className="list-group"
+        style={{ display: "flex", flexDirection: "column" }}
+      >
+        <img
+          src="public/pje2-branco.png"
+          style={{
+            height: "80px",
+            width: "25%",
+            margin: "05px",
+            alignSelf: "center",
+          }}
+        ></img>
+        <h1 style={{ textAlign: "center" }}>Gerenciamento de Processos</h1>
+        <div
+          style={{ display: "flex", height: "25px", justifyContent: "left" }}
+        >
+          <p style={{ marginLeft: "60px" }}>Fluxo</p>
+          <p style={{ marginLeft: "100px" }}>Total de Processos</p>
+          <p style={{ marginLeft: "auto" }}>Data Mais Antiga</p>
+        </div>
         <a
           href="#"
           className="list-group-item list-group-item-action"
