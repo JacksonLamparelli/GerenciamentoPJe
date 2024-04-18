@@ -252,7 +252,7 @@ function App() {
             onTurmasMin={turmasMin}
           />
         </div>
-        <div style={{ margin: "05px" }}>
+        <div style={{ margin: "5px" }}>
           <InputFileUpload
             onAcervoLoaded={onAcervoLoaded}
             onGabinete={onGabineteLoaded}
@@ -290,20 +290,38 @@ function App() {
   if (tarefaSelecionada != undefined) {
     return (
       <>
-        <div style={{ display: "flex", justifyContent: "flex-start" }}>
-          <Button
-            variant="contained"
-            onClick={() => setTarefaSelecionada(undefined)}
+        <div
+          style={{
+            backgroundColor: "#0078aa",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              margin: "05px",
+              backgroundColor: "#0078aa",
+            }}
           >
-            <UndoIcon></UndoIcon>
-          </Button>
-        </div>
+            <Button
+              variant="contained"
+              onClick={() => setTarefaSelecionada(undefined)}
+            >
+              <UndoIcon></UndoIcon>
+            </Button>
+          </div>
 
-        <div>
-          <CollapsibleTable
-            tarefaSelecionada={tarefaSelecionada}
-            acervo={acervo}
-          />
+          <div>
+            <CollapsibleTable
+              tarefaSelecionada={tarefaSelecionada}
+              acervo={acervo}
+            />
+          </div>
+          <div
+            style={{ backgroundColor: "#0078aa", justifyContent: "stretch" }}
+          ></div>
         </div>
       </>
     );
